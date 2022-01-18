@@ -7,7 +7,7 @@ public class triangle_lesgirit {
 		Scanner in = new Scanner(System.in);
 		
 		String tmp = in.nextLine();
-		String[] spl = tmp.split(" ");
+		String[] spl = tmp.split(", ");
 		
 		
 		int[] a = new int[3];

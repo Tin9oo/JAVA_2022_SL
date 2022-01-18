@@ -39,7 +39,6 @@ public class sortingprog {
 		int[] array = new int[10];
 		// array = in.nextInt();
 		
-		System.out.println("into the unkown");
 		
 		for(int i=0;i<array.length;++i) {
 			array[i] = Integer.parseInt(spl[i]);
