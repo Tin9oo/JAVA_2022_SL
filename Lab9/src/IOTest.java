@@ -5,6 +5,11 @@ class  Student {
 	private String name;
 	private int score;
 	
+	Student() {
+		this.ID = 0;
+		this.name = "";
+		this.score = 0;
+	}
 	Student(int ID, String name, int score){
 		this.ID = ID;
 		this.name = name;
@@ -32,7 +37,7 @@ class  Student {
 	}
 	
 	public String toString() {
-		return name+"'s ID is "+ID+" and his/her score is "+score;
+		return name+"'s ID is "+ID+" and his/her score is "+score+"\n";
 	}
 }
 
@@ -48,9 +53,10 @@ public class IOTest {
 			
 			Student[] s = new Student[10];
 			
-			int i=0;
+			int i=-1;
 			while ((line = bin.readLine()) != null) {
 				part = line.split(", ");
+				s[++i] = new Student();
 				s[i].setID(Integer.parseInt(part[0]));
 				s[i].setName(part[1]);
 				s[i].setScore(Integer.parseInt(part[2]));
@@ -60,9 +66,10 @@ public class IOTest {
 			FileWriter fout = new FileWriter(file);
 			BufferedWriter bout = new BufferedWriter(fout);
 			
-			for(int j=0; j< s.length; ++i) {
+			i=-1;
+			while(s[++i].getScore()!=-1) {
 				//fout.write(s[j].toString());
-				bout.write(s[j].toString());
+				bout.write(s[i].toString());
 			}
 			
 			fin.close();
