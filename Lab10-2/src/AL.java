@@ -6,6 +6,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 
 class  Student {
 	private int ID;
@@ -46,6 +49,12 @@ class  Student {
 	public String toString() {
 		return name+"'s ID is "+ID+" and his/her score is "+score+"\n";
 	}
+	
+	public int compareTo(Student s) {
+		if(this.score < s.score) return -1;
+		else if (this.score > s.score) return 1;
+		else return 0;
+	}
 }
 
 public class AL {
@@ -80,11 +89,18 @@ public class AL {
 				bout.write(a.get(i).toString());
 			}
 			
+			System.out.println("Max : " + Collections.max(a, Comparator.comparingInt(Student::getScore())));
+			
 			fin.close();
 			bout.close();
 		}
 		catch (IOException e) {
 			System.out.println("입출력 오류");
 		}
+	}
+
+	private static Object getScore() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
