@@ -34,6 +34,6 @@ public class vectorcollection {
 		for(int i=0; i<v.capacity(); ++i) {
 			System.out.print(v.get(i) + " ");
 		}
-		
+		System.out.println();
 	}
 }
