@@ -7,16 +7,16 @@ class TimerRunnable implements Runnable {
 	public TimerRunnable(JLabel timerLabel) {
 		this.timerLabel = timerLabel;
 	}
-	public void run() {
-		int n=0;
 
-		while(true) {
+	public void run() {
+		int n = 0;
+
+		while (true) {
 			timerLabel.setText(Integer.toString(n));
 			++n;
 			try {
 				Thread.sleep(1000);
-			}
-			catch(InterruptedException e) {
+			} catch (InterruptedException e) {
 				return;
 			}
 		}
@@ -25,19 +25,19 @@ class TimerRunnable implements Runnable {
 
 public class RunnableTimerEx extends JFrame {
 	public RunnableTimerEx() {
-	setTitle("RunnableTimerEx");
-	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	Container c = getContentPane();
-	c.setLayout(new FlowLayout());
-JLabel timerLabel = new JLabel();
-timerLabel.setFont(new Font("Gothic", Font.ITALIC, 80));
+		setTitle("RunnableTimerEx");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		Container c = getContentPane();
+		c.setLayout(new FlowLayout());
+		JLabel timerLabel = new JLabel();
+		timerLabel.setFont(new Font("Gothic", Font.ITALIC, 80));
 
-TimerRunnable runnable = new TimerRunnable(timerLabel);
-Thread th = new Thread(runnable);
-c.add(timerLabel);
-setSize(300, 150);
-setVisible(true);
-th.start();
+		TimerRunnable runnable = new TimerRunnable(timerLabel);
+		Thread th = new Thread(runnable);
+		c.add(timerLabel);
+		setSize(300, 150);
+		setVisible(true);
+		th.start();
 	}
 
 	public static void main(String[] args) {
