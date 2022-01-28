@@ -25,7 +25,7 @@ public class FindPrimeNumber {
 }
 
 class SyncObject {
-	final public int capacity=100;
+	final public int capacity=10;
 	int[] primeArray = new int[capacity];
 	int target=2;
 	int i=0;
@@ -78,7 +78,7 @@ class WorkerThread extends Thread {
 		this.sObj = sObj;
 	}
 
-	public void run() {}
+	public void run() {
 		sObj.prime();
 	}
 }
